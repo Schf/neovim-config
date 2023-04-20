@@ -33,12 +33,14 @@ keymap("n", "<C-Left>", ":vertical resize -1<cr>", nrmap)
 keymap("n", "<C-Right>", ":vertical resize +1<cr>", nrmap)
 
 -- Better buffer navigation
-keymap("n", "<S-k>", ":BufferLineCycleNext<cr>", nrmap)
-keymap("n", "<S-j>", ":BufferLineCyclePrev<cr>", nrmap)
+keymap("n", "<S-k>", ":bnext<cr>", nrmap)
+keymap("n", "<S-j>", ":bprevious<cr>", nrmap)
+-- keymap("n", "<S-k>", ":BufferLineCycleNext<cr>", nrmap)
+-- keymap("n", "<S-j>", ":BufferLineCyclePrev<cr>", nrmap)
 
 -- Move buffers
-keymap("n", "<M-K>", ":BufferLineMoveNext<CR>", nrmap)
-keymap("n", "<M-J>", ":BufferLineMovePrev<CR>", nrmap)
+-- keymap("n", "<M-K>", ":BufferLineMoveNext<CR>", nrmap)
+-- keymap("n", "<M-J>", ":BufferLineMovePrev<CR>", nrmap)
 
 -- Move text up and down
 keymap("n", "<M-k>", ":m .-2<CR>", nrmap)
