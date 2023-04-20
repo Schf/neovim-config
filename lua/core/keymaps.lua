@@ -70,7 +70,7 @@ keymap("v", "<M-k>", ":m .-2<cr>==", nrmap)
 keymap("v", "<M-j>", ":m .+1<cr>==", nrmap)
 
 -- Keep copied text after paste
-keymap("n", "p", '"_dP', nrmap)
+keymap("v", "p", '"_dP', nrmap)
 
 
 -- Visual Block
