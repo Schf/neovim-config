@@ -35,12 +35,10 @@ keymap("n", "<C-Right>", ":vertical resize +1<cr>", nrmap)
 -- Better buffer navigation
 keymap("n", "<S-k>", ":bnext<cr>", nrmap)
 keymap("n", "<S-j>", ":bprevious<cr>", nrmap)
--- keymap("n", "<S-k>", ":BufferLineCycleNext<cr>", nrmap)
--- keymap("n", "<S-j>", ":BufferLineCyclePrev<cr>", nrmap)
 
--- Move buffers
--- keymap("n", "<M-K>", ":BufferLineMoveNext<CR>", nrmap)
--- keymap("n", "<M-J>", ":BufferLineMovePrev<CR>", nrmap)
+-- Keep cursor on middle during on half-page scrolling
+keymap("n", "<C-u>", "<C-u>zz", nrmap)
+keymap("n", "<C-d>", "<C-d>zz", nrmap)
 
 -- Move text up and down
 keymap("n", "<M-k>", ":m .-2<CR>", nrmap)
