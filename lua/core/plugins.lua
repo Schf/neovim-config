@@ -3,8 +3,8 @@ local ensure_packer = function()
 	local fn = vim.fn
 	local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
 	if fn.empty(fn.glob(install_path)) > 0 then
-		print("Packer was not found.")
-		print("Currently installing to " .. install_path .. ".")
+		print("Packer was not found. Currently installing it to:")
+		print(install_path)
 		print("\n")
 		fn.system({"git", "clone", "--depth", "1",
 				"https://github.com/wbthomason/packer.nvim", install_path})
@@ -17,7 +17,8 @@ end
 packer_bootstrap = ensure_packer()
 
 if packer_bootstrap then
-	print("Instalation done. Now installing plugins.")
+	print("Instalation done. Press enter to begin installing plugins.")
+	print("Remember to restart Neovim before doing any editing.")
 	print("\n")
 end
 
@@ -31,7 +32,7 @@ vim.cmd([[
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
-if not packer_bootstrap and not status_ok then
+if not status_ok then
 	print("IMPORTANT - SOMETHING WENT WRONG WITH PACKER:", packer)
 	return
 end
