@@ -49,7 +49,16 @@ packer.init({
 return packer.startup(function(use)
 	use { "wbthomason/packer.nvim" } -- Have packer manage itself
 
-	use { "nvim-lua/plenary.nvim" }
+	use { "nvim-lua/plenary.nvim" } -- Common dependance
+
+	use { "hrsh7th/nvim-cmp" } -- Autocompletion plugin
+	use { "hrsh7th/cmp-buffer" }
+	use { "hrsh7th/cmp-path" }
+	use { "hrsh7th/cmp-cmdline" }
+	use { "saadparwaiz1/cmp_luasnip" } -- Snippet completions
+
+	-- Snippets
+	use { "L3MON4D3/LuaSnip" } -- Snippets engine
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
