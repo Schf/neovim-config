@@ -45,7 +45,7 @@ keymap("n", "<M-k>", ":m .-2<CR>", nrmap)
 keymap("n", "<M-j>", ":m .+1<CR>", nrmap)
 
 -- Left split Explorer
-keymap("n", "<leader>e", ":Lex 40<cr>", nrmap)
+keymap("n", "<leader>e", ":Ex<cr>", nrmap)
 
 -- Control save and quit
 keymap("n", "<C-s>", ":w<cr>", nrmap)
