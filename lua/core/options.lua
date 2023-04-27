@@ -21,7 +21,7 @@ o.shiftwidth = 4
 o.tabstop = 4
 -- line numbering
 o.number = true
-o.relativenumber = false
+o.relativenumber = true
 -- scroll
 o.scrolloff = 8
 o.sidescrolloff = 8
