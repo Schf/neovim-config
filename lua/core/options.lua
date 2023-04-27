@@ -1,6 +1,8 @@
 local g = vim.g
 g.python_host_prog = "/usr/bin/python"
 g.python3_host_prog = "/usr/bin/python"
+-- netrw options
+g.netrw_bufsettings = "noma nomod nu rnu nobl nowrap ro"
 
 local o = vim.opt
 o.clipboard = "unnamedplus"
