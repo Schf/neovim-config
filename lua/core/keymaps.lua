@@ -57,8 +57,8 @@ keymap("n", "<leader>O", ":call append(line('.')-1, repeat([''], v:count1))<CR>"
 
 
 -- Insert
-keymap("i", "<C-s>", "<ESC>:w<CR>i", nrmap)
-keymap("i", "<C-q>", "<ESC>:q<CR>i", nrmap)
+keymap("i", "<C-s>", "<ESC>:w<CR>a", nrmap)
+keymap("i", "<C-q>", "<ESC>:q<CR>a", nrmap)
 
 -- Visual
 -- Stay in "indent mode"
