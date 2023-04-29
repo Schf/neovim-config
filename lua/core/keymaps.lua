@@ -41,10 +41,6 @@ keymap("n", "<leader>q", ":bd<cr>", nrmap)
 keymap("n", "<C-u>", "<C-u>zz", nrmap)
 keymap("n", "<C-d>", "<C-d>zz", nrmap)
 
--- Move text up and down
-keymap("n", "<M-k>", ":m .-2<CR>", nrmap)
-keymap("n", "<M-j>", ":m .+1<CR>", nrmap)
-
 -- Open Netrw
 keymap("n", "<leader>e", ":Ex<cr>", nrmap)
 
