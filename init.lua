@@ -8,3 +8,5 @@ if packer_bootstrap then
 end
 
 require("conf.cmp")
+require("conf.lsp")
+require("conf.illuminate")
