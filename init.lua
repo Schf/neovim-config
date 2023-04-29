@@ -10,3 +10,4 @@ end
 require("conf.cmp")
 require("conf.lsp")
 require("conf.illuminate")
+require("conf.telescope")
