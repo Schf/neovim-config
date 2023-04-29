@@ -51,6 +51,9 @@ return packer.startup(function(use)
 
 	use { "nvim-lua/plenary.nvim" } -- Common dependance
 
+	use { "catppuccin/nvim" }
+	-- use { "EdenEast/nightfox.nvim" }
+
 	-- Autocompletion
 	use { "hrsh7th/nvim-cmp" }
 	use { "hrsh7th/cmp-buffer" }
