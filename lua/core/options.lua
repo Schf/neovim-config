@@ -6,9 +6,11 @@ g.netrw_bufsettings = "noma nomod nu rnu nobl nowrap ro"
 
 local o = vim.opt
 o.clipboard = "unnamedplus"
-o.cmdheight = 2
+o.cmdheight = 1
 o.fileencoding = "utf-8"
+o.numberwidth = 4
 o.pumheight = 10
+o.signcolumn = "yes"
 o.smartcase = true
 o.smartindent = true
 o.termguicolors = true

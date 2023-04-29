@@ -45,7 +45,7 @@ keymap("n", "<C-d>", "<C-d>zz", nrmap)
 keymap("n", "<M-k>", ":m .-2<CR>", nrmap)
 keymap("n", "<M-j>", ":m .+1<CR>", nrmap)
 
--- Left split Explorer
+-- Open Netrw
 keymap("n", "<leader>e", ":Ex<cr>", nrmap)
 
 -- Control save and quit
