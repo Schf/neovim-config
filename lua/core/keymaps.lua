@@ -35,6 +35,7 @@ keymap("n", "<C-Right>", ":vertical resize +1<cr>", nrmap)
 -- Better buffer navigation
 keymap("n", "<S-k>", ":bnext<cr>", nrmap)
 keymap("n", "<S-j>", ":bprevious<cr>", nrmap)
+keymap("n", "<leader>q", ":bd<cr>", nrmap)
 
 -- Keep cursor on middle during on half-page scrolling
 keymap("n", "<C-u>", "<C-u>zz", nrmap)
@@ -77,4 +78,3 @@ keymap("v", "p", '"_dP', nrmap)
 -- Move text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", nrmap)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", nrmap)
-

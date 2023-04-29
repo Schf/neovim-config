@@ -1,13 +1,13 @@
-	-- Function to install packer from github
+-- Function to install packer from github
 local ensure_packer = function()
 	local fn = vim.fn
-	local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 	if fn.empty(fn.glob(install_path)) > 0 then
 		print("Packer was not found. Currently installing it to:")
 		print(install_path)
 		print("\n")
-		fn.system({"git", "clone", "--depth", "1",
-				"https://github.com/wbthomason/packer.nvim", install_path})
+		fn.system({ "git", "clone", "--depth", "1",
+			"https://github.com/wbthomason/packer.nvim", install_path })
 		vim.cmd [[packadd packer.nvim]]
 		return true
 	end
@@ -79,4 +79,3 @@ return packer.startup(function(use)
 		packer.sync()
 	end
 end)
-

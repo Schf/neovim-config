@@ -1,5 +1,5 @@
 vim.opt.background = "light"
-vim.cmd("colorscheme morning") -- Sane default in case no colorscheme plugin was chosen
+vim.cmd("colorscheme morning")     -- Sane default in case no colorscheme plugin was chosen
 
 local colorscheme = "catppuccin"   -- If your colorscheme comes from a plugin, add it here
 local flavour = "catppuccin-latte" -- If your colorscheme has a flavour, at it here

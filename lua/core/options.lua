@@ -28,4 +28,3 @@ o.sidescrolloff = 8
 
 o.iskeyword:append "-"
 o.shortmess:append "c"
-
