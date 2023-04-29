@@ -21,10 +21,10 @@ vim.g.maplocalleader = " "
 
 -- Normal
 -- Better window navigation
-keymap("n", "<C-k", "<C-w>k", nrmap)
-keymap("n", "<C-j", "<C-w>j", nrmap)
-keymap("n", "<C-h", "<C-w>h", nrmap)
-keymap("n", "<C-l", "<C-w>l", nrmap)
+keymap("n", "<C-k>", "<C-w>k", nrmap)
+keymap("n", "<C-j>", "<C-w>j", nrmap)
+keymap("n", "<C-h>", "<C-w>h", nrmap)
+keymap("n", "<C-l>", "<C-w>l", nrmap)
 
 -- Window resizing
 keymap("n", "<C-Up>", ":resize +1<cr>", nrmap)
