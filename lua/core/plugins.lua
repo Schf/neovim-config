@@ -51,6 +51,7 @@ return packer.startup(function(use)
 
 	use { "nvim-lua/plenary.nvim" } -- Common dependance
 
+	-- Colors
 	use { "catppuccin/nvim" }
 	-- use { "EdenEast/nightfox.nvim" }
 
