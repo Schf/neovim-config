@@ -62,6 +62,7 @@ return packer.startup(function(use)
 	use { "hrsh7th/cmp-nvim-lsp" }
 	use { "hrsh7th/cmp-nvim-lua" }
 	use { "saadparwaiz1/cmp_luasnip" } -- Snippet completions
+	use { "windwp/nvim-autopairs" } -- Autopairs for quotes, brackets, etc
 
 	-- Snippets
 	use { "L3MON4D3/LuaSnip" } -- Snippets engine
