@@ -68,6 +68,15 @@ return packer.startup(function(use)
 	-- Snippets
 	use { "L3MON4D3/LuaSnip" } -- Snippets engine
 
+	-- Treesitter
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = function()
+			require('nvim-treesitter.install').update({ with_sync = true })()
+		end,
+	}
+	use { "nvim-treesitter/playground" }
+
 	-- LSP
 	use { "neovim/nvim-lspconfig" }
 	use { "williamboman/mason.nvim" }
