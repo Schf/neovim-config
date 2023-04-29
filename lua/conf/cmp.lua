@@ -1,8 +1,3 @@
-if packer_bootstrap then
-	vim.notify("Completion plugin won't load on Packer's installation run.")
-	return
-end
-
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
 	vim.notify("Something went wrong with cmp: " .. cmp)
