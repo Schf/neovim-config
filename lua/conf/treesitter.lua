@@ -33,8 +33,15 @@ configs.setup({
 	highlight = {
 		enable = true,          -- false will disable the whole extension
 	},
+	autopairs = {
+		enable = true,
+	},
 	indent = {
 		enable = true,
+	},
+	context_commentstring = {
+		enable = true,
+		enable_autocmd = false,
 	},
 	playground = {
 		enable = true,

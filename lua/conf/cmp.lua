@@ -135,11 +135,3 @@ cmp.setup {
 		native_menu = false,
 	},
 }
-
-local autopairs_status_ok, autopairs = pcall(require, "nvim-autopairs")
-if not autopairs_status_ok then
-	vim.notify("Something went wrong with autopairs: " .. autopairs)
-	return
-end
-
-autopairs.setup({})
