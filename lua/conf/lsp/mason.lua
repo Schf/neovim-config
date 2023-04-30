@@ -1,12 +1,14 @@
 local mason_status_ok, mason = pcall(require, "mason")
 if not mason_status_ok then
-	vim.notify("Something went wrong with mason: " .. mason)
+	vim.notify("Something went wrong with mason", vim.log.levels.WARN)
+	-- vim.notify("" .. mason, vim.log.levels.DEBUG)
 	return
 end
 
 local masonlspconfig_status_ok, masonlspconfig = pcall(require, "mason-lspconfig")
 if not masonlspconfig_status_ok then
-	vim.notify("Something went wrong with mason-lspconfig: " .. masonlspconfig)
+	vim.notify("Something went wrong with masonlspconfig", vim.log.levels.WARN)
+	-- vim.notify("" .. masonlspconfig, vim.log.levels.DEBUG)
 	return
 end
 
@@ -38,7 +40,8 @@ masonlspconfig.setup({
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
-	vim.notify("Something went wrong with lspconfig" .. lspconfig)
+	vim.notify("Something went wrong with lspconfig", vim.log.levels.WARN)
+	-- vim.notify("" .. lspconfig, vim.log.levels.DEBUG)
 	return
 end
 

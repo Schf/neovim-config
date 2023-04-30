@@ -1,5 +1,7 @@
 local config_status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not config_status_ok then
+	vim.notify("Something went wrong with treesitter.configs", vim.log.levels.WARN)
+	-- vim.notify("" .. configs, vim.log.levels.DEBUG)
 	return
 end
 
@@ -37,7 +39,7 @@ configs.setup({
 	playground = {
 		enable = true,
 		disable = {},
-		updatetime = 25,     -- Debounced time for highlighting nodes in the playground from source code
+		updatetime = 25,   -- Debounced time for highlighting nodes in the playground from source code
 		persist_queries = false, -- Whether the query persists across vim sessions
 		keybindings = {
 			toggle_query_editor = 'o',
@@ -51,5 +53,5 @@ configs.setup({
 			goto_node = '<cr>',
 			show_help = '?',
 		},
-	}
+	},
 })

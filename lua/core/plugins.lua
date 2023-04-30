@@ -65,17 +65,19 @@ return packer.startup(function(use)
 	use { "saadparwaiz1/cmp_luasnip" } -- Snippet completions
 	use { "windwp/nvim-autopairs" } -- Autopairs for quotes, brackets, etc
 
-	-- Snippets
+	-- QoL
+	use { "numToStr/Comment.nvim" }
 	use { "L3MON4D3/LuaSnip" } -- Snippets engine
 
 	-- Treesitter
 	use {
-		'nvim-treesitter/nvim-treesitter',
+		"nvim-treesitter/nvim-treesitter",
 		run = function()
-			require('nvim-treesitter.install').update({ with_sync = true })()
+			require("nvim-treesitter.install").update({ with_sync = true })()
 		end,
 	}
 	use { "nvim-treesitter/playground" }
+	use { "JoosepAlviste/nvim-ts-context-commentstring" }
 
 	-- LSP
 	use { "neovim/nvim-lspconfig" }
