@@ -77,7 +77,7 @@ return packer.startup(function(use)
 		end,
 	}
 	use { "nvim-treesitter/playground" }
-	use { "JoosepAlviste/nvim-ts-context-commentstring" }
+	-- use { "JoosepAlviste/nvim-ts-context-commentstring" }
 
 	-- LSP
 	use { "neovim/nvim-lspconfig" }
