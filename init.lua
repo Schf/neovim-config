@@ -1,5 +1,6 @@
+-- Sane default colorscheme before plugins are loaded
 vim.opt.background = "light"
-vim.cmd("colorscheme morning")     -- Sane default before plugins are loaded
+vim.cmd("colorscheme morning")
 
 require("core.options")
 require("core.keymaps")
@@ -17,3 +18,4 @@ require("conf.telescope")
 require("conf.treesitter")
 require("conf.autopairs")
 require("conf.comment")
+require("conf.whichkey")

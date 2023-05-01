@@ -1,13 +1,9 @@
 local nrmap = { noremap = true, silent = true }
-local rmap = { silent = true }
-
-local term_nrmap = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
 -- Space as leader
-keymap("", "<Space>", "<Nop>", nrmap)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -56,21 +52,3 @@ keymap("n", "<leader>O", ":call append(line('.')-1, repeat([''], v:count1))<CR>"
 -- Insert
 keymap("i", "<C-s>", "<ESC>:w<CR>a", nrmap)
 keymap("i", "<C-q>", "<ESC>:q<CR>a", nrmap)
-
--- Visual
--- Stay in "indent mode"
-keymap("v", "<", "<gv", nrmap)
-keymap("v", ">", ">gv", nrmap)
-
--- Move text up and down
-keymap("v", "<M-k>", ":m .-2<cr>==", nrmap)
-keymap("v", "<M-j>", ":m .+1<cr>==", nrmap)
-
--- Keep copied text after paste
-keymap("v", "p", '"_dP', nrmap)
-
-
--- Visual Block
--- Move text up and down
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", nrmap)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", nrmap)

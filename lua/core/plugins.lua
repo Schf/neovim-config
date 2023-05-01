@@ -68,6 +68,7 @@ return packer.startup(function(use)
 	-- QoL
 	use { "numToStr/Comment.nvim" }
 	use { "L3MON4D3/LuaSnip" } -- Snippets engine
+	use { "folke/which-key.nvim" }
 
 	-- Treesitter
 	use {
