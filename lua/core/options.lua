@@ -1,34 +1,34 @@
-local g = vim.g
-g.python_host_prog = "/usr/bin/python"
-g.python3_host_prog = "/usr/bin/python"
+vim.g.python_host_prog = "/usr/bin/python"
+vim.g.python3_host_prog = "/usr/bin/python"
 -- netrw options
-g.netrw_bufsettings = "noma nomod nu rnu nobl nowrap ro"
+vim.g.netrw_bufsettings = "noma nomod nu rnu nobl nowrap ro"
 
-local o = vim.opt
-o.clipboard = "unnamedplus"
-o.cmdheight = 1
-o.fileencoding = "utf-8"
-o.numberwidth = 4
-o.pumheight = 10
-o.signcolumn = "yes"
-o.smartcase = true
-o.smartindent = true
-o.splitbelow = true
-o.splitright = true
-o.termguicolors = true
-o.undofile = true
-o.updatetime = 300
-o.wrap = true
+vim.o.clipboard = "unnamedplus"
+vim.o.cmdheight = 1
+vim.o.fileencoding = "utf-8"
+vim.o.numberwidth = 4
+vim.o.pumheight = 10
+vim.o.signcolumn = "yes"
+vim.o.smartcase = true
+vim.o.smartindent = true
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.termguicolors = true
+vim.o.timeout = true
+vim.o.timeoutlen = 1000
+vim.o.undofile = true
+vim.o.updatetime = 300
+vim.o.wrap = true
 -- tab
-o.expandtab = false
-o.shiftwidth = 4
-o.tabstop = 4
+vim.o.expandtab = false
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
 -- line numbering
-o.number = true
-o.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true
 -- scroll
-o.scrolloff = 8
-o.sidescrolloff = 8
+vim.o.scrolloff = 8
+vim.o.sidescrolloff = 8
 
-o.iskeyword:append "-"
-o.shortmess:append "c"
+vim.opt.iskeyword:append "-"
+vim.opt.shortmess:append "c"
