@@ -4,7 +4,7 @@ local cmp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_status_ok then
 	vim.notify("Something went wrong with cmp_nvim_lsp", vim.log.levels.WARN)
 	-- vim.notify("" .. cmp_nvim_lsp, vim.log.levels.DEBUG)
-	return
+	return false
 end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()

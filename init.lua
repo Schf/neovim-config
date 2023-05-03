@@ -6,16 +6,13 @@ require("core.options")
 require("core.keymaps")
 require("core.plugins")
 
-if packer_bootstrap then
+if Packer_bootstrap then
 	return
 end
 
-require("conf.colorscheme")
-require("conf.cmp")
 require("conf.lsp")
 require("conf.illuminate")
 require("conf.telescope")
 require("conf.treesitter")
-require("conf.autopairs")
 require("conf.comment")
 require("conf.whichkey")

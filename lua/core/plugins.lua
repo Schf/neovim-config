@@ -14,9 +14,9 @@ local ensure_packer = function()
 	return false
 end
 
-packer_bootstrap = ensure_packer()
+Packer_bootstrap = ensure_packer()
 
-if packer_bootstrap then
+if Packer_bootstrap then
 	print("Instalation done. Press enter to begin installing plugins.")
 	print("Remember to restart Neovim before doing any editing.")
 	print("\n")
@@ -31,9 +31,10 @@ vim.cmd([[
 ]])
 
 -- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	print("IMPORTANT - SOMETHING WENT WRONG WITH PACKER:", packer)
+local packer_status_ok, packer = pcall(require, "packer")
+if not packer_status_ok then
+	vim.notify("IMPORTANT - SOMETHING WENT WRONG WITH PACKER:", vim.log.levels.ERROR)
+	vim.notify("" .. packer, vim.log.levels.ERROR)
 	return
 end
 
@@ -49,26 +50,9 @@ packer.init({
 return packer.startup(function(use)
 	use { "wbthomason/packer.nvim" } -- Have packer manage itself
 
-	use { "nvim-lua/plenary.nvim" } -- Common dependance
-
-	-- Colors
-	use { "catppuccin/nvim" }
-	-- use { "EdenEast/nightfox.nvim" }
-
-	-- Autocompletion
-	use { "hrsh7th/nvim-cmp" }
-	use { "hrsh7th/cmp-buffer" }
-	use { "hrsh7th/cmp-path" }
-	use { "hrsh7th/cmp-cmdline" }
-	use { "hrsh7th/cmp-nvim-lsp" }
-	use { "hrsh7th/cmp-nvim-lua" }
-	use { "saadparwaiz1/cmp_luasnip" } -- Snippet completions
-	use { "windwp/nvim-autopairs" } -- Autopairs for quotes, brackets, etc
-
-	-- QoL
-	use { "numToStr/Comment.nvim" }
-	use { "L3MON4D3/LuaSnip" } -- Snippets engine
-	use { "folke/which-key.nvim" }
+	require("conf.colorscheme")(use)
+	require("conf.autocompletion")(use)
+	require("conf.treesitter")(use)
 
 	-- Treesitter
 	use {
@@ -89,11 +73,23 @@ return packer.startup(function(use)
 	use { "RRethy/vim-illuminate" }
 
 	-- Telescope
-	use { "nvim-telescope/telescope.nvim" }
+	use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" }, }
+
+	-- QoL
+	use { "numToStr/Comment.nvim" }
+	use { "L3MON4D3/LuaSnip" } -- Snippets engine
+	use { "folke/which-key.nvim" }
+	use { "ThePrimeagen/harpoon" }
+	use {
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end
+	}
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
-	if packer_bootstrap then
+	if Packer_bootstrap then
 		packer.sync()
 	end
 end)
