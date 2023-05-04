@@ -1,7 +1,3 @@
--- TEMPEPORARY; should be moved to colorscheme config when possible
-vim.o.background = "light"
-
-
 vim.g.python_host_prog = "/usr/bin/python"
 vim.g.python3_host_prog = "/usr/bin/python"
 -- netrw options
