@@ -33,12 +33,13 @@ Map("n", "<S-k>", ":bnext<cr>", "Go to Next Buffer")
 Map("n", "<S-j>", ":bprevious<cr>", "Go to Previous Buffer")
 Map("n", "<leader>q", ":bd<cr>", "Close Buffer")
 
--- Keep cursor on middle during on half-page scrolling
+-- QoL
+Map("n", "<leader>h", ":noh", "Remove Search Highlight")
 Map("n", "<C-u>", "<C-u>zz", "Scroll Up Half-Page")
 Map("n", "<C-d>", "<C-d>zz", "Scroll Down Half-Page")
 
 -- Open Netrw
-Map("n", "<leader>e", ":Ex<cr>", "Open Netrw")
+Map("n", "<leader>e", vim.cmd.Ex, "Open Netrw")
 
 -- Control save and quit
 Map("n", "<C-s>", ":w<cr>", "Save")
