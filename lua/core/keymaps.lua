@@ -23,18 +23,18 @@ Map("n", "<C-h>", "<C-w>h", "Go to Left Window")
 Map("n", "<C-l>", "<C-w>l", "Go to Right Window")
 
 -- Window resizing
-Map("n", "<C-Up>", ":resize +1<cr>", "Resize Window Taller")
-Map("n", "<C-Down>", ":resize -1<cr>", "Resize Window Shorter")
-Map("n", "<C-Left>", ":vertical resize -1<cr>", "Resize Window Thinner")
-Map("n", "<C-Right>", ":vertical resize +1<cr>", "Resize Window Thicker")
+Map("n", "<C-Up>", ":resize +1<CR>", "Resize Window Taller")
+Map("n", "<C-Down>", ":resize -1<CR>", "Resize Window Shorter")
+Map("n", "<C-Left>", ":vertical resize -1<CR>", "Resize Window Thinner")
+Map("n", "<C-Right>", ":vertical resize +1<CR>", "Resize Window Thicker")
 
 -- Better buffer navigation
-Map("n", "<S-k>", ":bnext<cr>", "Go to Next Buffer")
-Map("n", "<S-j>", ":bprevious<cr>", "Go to Previous Buffer")
-Map("n", "<leader>q", ":bd<cr>", "Close Buffer")
+Map("n", "<S-k>", ":bnext<CR>", "Go to Next Buffer")
+Map("n", "<S-j>", ":bprevious<CR>", "Go to Previous Buffer")
+Map("n", "<leader>q", ":bd<CR>", "Close Buffer")
 
 -- QoL
-Map("n", "<leader>h", ":noh", "Remove Search Highlight")
+Map("n", "<leader>h", vim.cmd.noh, "Remove Search Highlight")
 Map("n", "<C-u>", "<C-u>zz", "Scroll Up Half-Page")
 Map("n", "<C-d>", "<C-d>zz", "Scroll Down Half-Page")
 
@@ -42,8 +42,10 @@ Map("n", "<C-d>", "<C-d>zz", "Scroll Down Half-Page")
 Map("n", "<leader>e", vim.cmd.Ex, "Open Netrw")
 
 -- Control save and quit
-Map("n", "<C-s>", ":w<cr>", "Save")
-Map("n", "<C-q>", ":q<cr>", "Quit")
+Map("n", "<C-s>", ":w<CR>", "Save")
+Map("n", "<C-q>", ":q<CR>", "Quit")
+Map("i", "<C-s>", "<ESC>:w<CR>a", "Save")
+Map("i", "<C-q>", "<ESC>:q<CR>", "Quit")
 
 -- Empty line commands
 Map(
@@ -59,13 +61,6 @@ Map(
 	"Add Line Below"
 )
 
-
--- Insert
-Map("i", "<C-s>", "<ESC>:w<CR>a", "Save")
-Map("i", "<C-q>", "<ESC>:q<CR>a", "Quit")
-
-
--- Visual
 Map("v", "<", "<gv", "Remove Indent")
 Map("v", ">", ">gv", "Add Indent")
 

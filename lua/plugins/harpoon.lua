@@ -5,7 +5,7 @@ return {
 		local ui = require("harpoon.ui")
 		local mark = require("harpoon.mark")
 		local pref = "<leader>l"
-		Map("n", pref .. "a", mark.add_file, "Harpoon Add Mark")
+		Map("n", pref .. " ", mark.add_file, "Harpoon Add Mark")
 
 		Map("n", pref .. "m", ui.toggle_quick_menu, "Harpoon Toggle Menu")
 		Map("n", pref .. "k", ui.nav_next, "Harpoon Go to Next Mark")
