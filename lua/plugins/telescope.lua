@@ -5,7 +5,7 @@ telescope_setup.mappings.i = function()
 	return {
 		["<C-n>"] = actions.cycle_history_next,
 		["<C-p>"] = actions.cycle_history_prev,
-	
+
 		["<C-j>"] = actions.move_selection_next,
 		["<C-k>"] = actions.move_selection_previous,
 	
@@ -70,46 +70,35 @@ telescope_setup.mappings.n = function ()
 end
 
 return {
-	'nvim-telescope/telescope.nvim', tag = '0.1.1',
--- or                              , branch = '0.1.1',
-	dependencies = { 'nvim-lua/plenary.nvim' },
-	config = function ()
-		local telescope = require("telescope")
-		telescope.setup({
-			defaults = {
-				prompt_prefix = " ",
-				selection_caret = " ",
-				path_display = { "smart" },
-		
-				mappings = {
-					i = telescope_setup.mappings.i(),
-		
-					n = telescope_setup.mappings.n(),
+	{
+		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		dependencies = { 'nvim-lua/plenary.nvim' },
+		config = function ()
+			local telescope = require("telescope")
+			telescope.setup({
+				defaults = {
+					prompt_prefix = " ",
+					selection_caret = " ",
+					path_display = { "smart" },
+			
+					mappings = {
+						i = telescope_setup.mappings.i(),
+			
+						n = telescope_setup.mappings.n(),
+					},
 				},
-			},
-			pickers = {
-				-- Default configuration for builtin pickers goes here:
-				-- picker_name = {
-				--   picker_config_key = value,
-				--   ...
-				-- }
-				-- Now the picker_config_key will be applied every time you call this
-				-- builtin picker
-			},
-			extensions = {
-				-- Your extension configuration goes here:
-				-- extension_name = {
-				--   extension_config_key = value,
-				-- }
-				-- please take a look at the readme of the extension you want to configure
-			},
-		})
-
-		local builtin = require("telescope.builtin")
-		local pref = "<leader>s"
-		Map("n", pref .. "f", builtin.find_files, "Search Files")
-		Map("n", pref .. "g", builtin.find_files, "Search with Grep")
-		Map("n", pref .. "b", builtin.find_files, "Search Buffers")
-		Map("n", pref .. "h", builtin.find_files, "Search Help Tags")
-	end,
-    }
+				pickers = {
+				},
+				extensions = {
+				},
+			})
+	
+			local builtin = require("telescope.builtin")
+			local pref = "<leader>s"
+			Map("n", pref .. "f", builtin.find_files, "Search Files")
+			Map("n", pref .. "g", builtin.find_files, "Search with Grep")
+			Map("n", pref .. "b", builtin.find_files, "Search Buffers")
+			Map("n", pref .. "h", builtin.find_files, "Search Help Tags")
+		end,
+    },
+}
