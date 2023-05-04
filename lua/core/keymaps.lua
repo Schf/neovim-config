@@ -62,3 +62,13 @@ Map(
 -- Insert
 Map("i", "<C-s>", "<ESC>:w<CR>a", "Save")
 Map("i", "<C-q>", "<ESC>:q<CR>a", "Quit")
+
+
+-- Visual
+Map("v", "<", "<gv", "Remove Indent")
+Map("v", ">", ">gv", "Add Indent")
+
+Map("v", "<M-k>", ":move .-2<CR>gv-gv", "Move Line(s) Up")
+Map("v", "<M-j>", ":move '>+1<CR>gv-gv", "Move Line(s) Down")
+
+Map("v", "p", "\"_dP", "Paste Without Yank")
