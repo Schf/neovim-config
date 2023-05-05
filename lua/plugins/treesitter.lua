@@ -42,10 +42,10 @@ return {
 				indent = {
 					enable = true,
 				},
-				-- context_commentstring = {
-				-- 	enable = true,
-				-- 	enable_autocmd = false,
-				-- },
+				context_commentstring = {
+					enable = true,
+					enable_autocmd = false,
+				},
 				playground = {
 					enable = true,
 					disable = {},
@@ -68,4 +68,5 @@ return {
 		end,
 	},
 	{ "nvim-treesitter/playground", },
+	{ "JoosepAlviste/nvim-ts-context-commentstring", },
 }
