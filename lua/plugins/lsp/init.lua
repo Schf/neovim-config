@@ -38,6 +38,8 @@ local function lsp_keymaps(bufnr)
 end
 
 local function mason_lspconfig_config()
+	require("mason").setup({})
+
 	local servers = { "lua_ls", "clangd", "pyright", "texlab", }
 	local mason_lspconfig = require("mason-lspconfig")
 	mason_lspconfig.setup({
@@ -125,10 +127,7 @@ end
 
 return {
 	{ "neovim/nvim-lspconfig" },
-	{
-		"williamboman/mason.nvim",
-		config = function() require("mason").setup({}) end,
-	},
+	{ "williamboman/mason.nvim" },
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = mason_lspconfig_config,
