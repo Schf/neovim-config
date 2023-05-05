@@ -28,8 +28,8 @@ Map("n", "<C-Left>", ":vertical resize -1<CR>", "Resize Window Thinner")
 Map("n", "<C-Right>", ":vertical resize +1<CR>", "Resize Window Thicker")
 
 -- Better buffer navigation
-Map("n", "<S-k>", ":bnext<CR>", "Go to Next Buffer")
-Map("n", "<S-j>", ":bprevious<CR>", "Go to Previous Buffer")
+-- Map("n", "<S-k>", ":bnext<CR>", "Go to Next Buffer")
+-- Map("n", "<S-j>", ":bprevious<CR>", "Go to Previous Buffer")
 Map("n", "<leader>q", ":bd<CR>", "Close Buffer")
 
 -- QoL
