@@ -1,7 +1,7 @@
 local function lsp_keymaps(bufnr)
 	local opts = { buffer = bufnr, remap = false, silent = true }
 
-	-- Map("n", "gd", vim.lsp.buf.definition, "Go to Declaration", opts)
+	Map("n", "gd", vim.lsp.buf.definition, "Go to Declaration", opts)
 	-- Map("n", "gD", vim.lsp.buf.declaration, "Go to Definition", opts)
 	-- Map("n", "gI", vim.lsp.buf.implementation, "Go to Implementation", opts)
 	-- Map("n", "gl", vim.diagnostics.open_float, "Open Float", opts)
