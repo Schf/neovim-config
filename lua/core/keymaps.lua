@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-Map = function(mode, lhs, rhs, desc, opts)
+function Map(mode, lhs, rhs, desc, opts)
 	opts = opts or { noremap = true, silent = true }
 	opts = vim.tbl_deep_extend("force", { desc = desc }, opts)
 	vim.keymap.set(mode, lhs, rhs, opts)
