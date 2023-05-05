@@ -8,23 +8,23 @@ telescope_setup.mappings.i = function()
 
 		["<C-j>"] = actions.move_selection_next,
 		["<C-k>"] = actions.move_selection_previous,
-	
+
 		["<C-c>"] = actions.close,
-	
+
 		["<Down>"] = actions.move_selection_next,
 		["<Up>"] = actions.move_selection_previous,
-	
+
 		["<CR>"] = actions.select_default,
 		["<C-x>"] = actions.select_horizontal,
 		["<C-v>"] = actions.select_vertical,
 		["<C-t>"] = actions.select_tab,
-	
+
 		["<C-u>"] = actions.preview_scrolling_up,
 		["<C-d>"] = actions.preview_scrolling_down,
-	
+
 		["<PageUp>"] = actions.results_scrolling_up,
 		["<PageDown>"] = actions.results_scrolling_down,
-	
+
 		["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
 		["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 		["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
@@ -34,7 +34,7 @@ telescope_setup.mappings.i = function()
 	}
 end
 
-telescope_setup.mappings.n = function ()
+telescope_setup.mappings.n = function()
 	local actions = require("telescope.actions")
 	return {
 		["<esc>"] = actions.close,
@@ -71,19 +71,20 @@ end
 
 return {
 	{
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.1',
 		dependencies = { 'nvim-lua/plenary.nvim' },
-		config = function ()
+		config = function()
 			local telescope = require("telescope")
 			telescope.setup({
 				defaults = {
 					prompt_prefix = " ",
 					selection_caret = " ",
 					path_display = { "smart" },
-			
+
 					mappings = {
 						i = telescope_setup.mappings.i(),
-			
+
 						n = telescope_setup.mappings.n(),
 					},
 				},
@@ -92,7 +93,7 @@ return {
 				extensions = {
 				},
 			})
-	
+
 			local builtin = require("telescope.builtin")
 			local pref = "<leader>s"
 			Map("n", pref .. "f", builtin.find_files, "Search Files")
@@ -100,5 +101,5 @@ return {
 			Map("n", pref .. "b", builtin.buffers, "Search Buffers")
 			Map("n", pref .. "h", builtin.help_tags, "Search Help Tags")
 		end,
-    },
+	},
 }

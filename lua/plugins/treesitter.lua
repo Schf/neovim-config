@@ -8,35 +8,33 @@ return {
 			local configs = require("nvim-treesitter.configs")
 			configs.setup({
 				ensure_installed = {
-					"lua",
-
 					-- "all",
 
-					-- "bash",
-					-- "c",
-					-- "cmake",
-					-- "cpp",
-					-- "cuda",
-					-- "git_config",
-					-- "git_rebase",
-					-- "gitattributes",
-					-- "gitcommit",
-					-- "gitignore",
-					-- "java",
-					-- "json",
-					-- "llvm",
-					-- "lua",
-					-- "markdown",
-					-- "markdown_inline",
-					-- "python",
-					-- "rust",
-					-- "toml",
-					-- "yaml",
+					"bash",
+					"c",
+					"cmake",
+					"cpp",
+					"cuda",
+					"git_config",
+					"git_rebase",
+					"gitattributes",
+					"gitcommit",
+					"gitignore",
+					"java",
+					"json",
+					"llvm",
+					"lua",
+					"markdown",
+					"markdown_inline",
+					"python",
+					"rust",
+					"toml",
+					"yaml",
 				},
 				-- one of "all" or a list of languages
 				ignore_install = { "phpdoc" },
 				highlight = {
-					enable = true,    -- false will disable the whole extension
+					enable = true, -- false will disable the whole extension
 				},
 				autopairs = {
 					enable = true,
@@ -69,5 +67,5 @@ return {
 			})
 		end,
 	},
-	{ "nvim-treesitter/playground",	},
+	{ "nvim-treesitter/playground", },
 }
