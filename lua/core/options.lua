@@ -2,12 +2,12 @@ vim.g.python_host_prog = "/usr/bin/python"
 vim.g.python3_host_prog = "/usr/bin/python"
 -- netrw options
 vim.g.netrw_bufsettings = "noma nomod nu rnu nobl nowrap ro"
-vim.g.netrw_liststyle = 3
 
 vim.o.background = "light"
 vim.o.clipboard = "unnamedplus"
 vim.o.cmdheight = 2
 vim.o.fileencoding = "utf-8"
+vim.o.keywordprg = ":help"
 vim.o.numberwidth = 4
 vim.o.pumheight = 10
 vim.o.signcolumn = "yes"

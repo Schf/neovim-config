@@ -1,9 +1,14 @@
 local function lsp_keymaps(bufnr)
 	local opts = { buffer = bufnr, remap = false, silent = true }
+
+	-- Map("n", "gd", vim.lsp.buf.definition, "Go to Declaration", opts)
+	-- Map("n", "gD", vim.lsp.buf.declaration, "Go to Definition", opts)
+	-- Map("n", "gI", vim.lsp.buf.implementation, "Go to Implementation", opts)
+	-- Map("n", "gl", vim.diagnostics.open_float, "Open Float", opts)
+	Map("n", "gr", vim.lsp.buf.references, "Go to References", opts)
+
 	local pref = "<leader>l"
-	Map("n", pref .. "a",
-		vim.lsp.buf.code_action, "Code Action", opts
-	)
+	Map("n", pref .. "a", vim.lsp.buf.code_action, "Code Action", opts)
 	Map("n", pref .. "d",
 		"<cmd>Telescope diagnostics bufnr=0<cr>",
 		"Document Diagnostics", opts
@@ -16,27 +21,12 @@ local function lsp_keymaps(bufnr)
 		"<cmd>lua vim.lsp.buf.format{async=true}<cr>",
 		"Format", opts
 	)
-	Map("n", pref .. "i",
-		vim.cmd.LspInfo, "Info", opts
-	)
-	Map("n", pref .. "I",
-		vim.cmd.LspInstallInfo, "Installer Info", opts
-	)
-	Map("n", pref .. "j",
-		vim.diagnostic.goto_next, "Next Diagnostic", opts
-	)
-	Map("n", pref .. "k",
-		vim.diagnostic.goto_prev, "Prev Diagnostic", opts
-	)
-	Map("n", pref .. "l",
-		vim.lsp.codelens.run, "CodeLens Action", opts
-	)
-	Map("n", pref .. "q",
-		vim.diagnostic.setloclist, "Quickfix", opts
-	)
-	Map("n", pref .. "r",
-		vim.lsp.buf.rename, "Rename", opts
-	)
+	Map("n", pref .. "i", vim.cmd.LspInfo, "Info", opts)
+	Map("n", pref .. "j", vim.diagnostic.goto_next, "Next Diagnostic", opts)
+	Map("n", pref .. "k", vim.diagnostic.goto_prev, "Prev Diagnostic", opts)
+	Map("n", pref .. "l", vim.lsp.codelens.run, "CodeLens Action", opts)
+	Map("n", pref .. "q", vim.diagnostic.setloclist, "Quickfix", opts)
+	Map("n", pref .. "r", vim.lsp.buf.rename, "Rename", opts)
 	Map("n", pref .. "s",
 		"<cmd>Telescope lsp_document_symbols<cr>",
 		"Document Symbols", opts
@@ -48,12 +38,7 @@ local function lsp_keymaps(bufnr)
 end
 
 local function mason_lspconfig_config()
-	local servers = {
-		"lua_ls",
-		"clangd",
-		"pyright",
-		"texlab",
-	}
+	local servers = { "lua_ls", "clangd", "pyright", "texlab", }
 	local mason_lspconfig = require("mason-lspconfig")
 	mason_lspconfig.setup({
 		ensure_installed = servers,
