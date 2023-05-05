@@ -15,7 +15,6 @@ end
 --	 terminal mode = "t"
 --	 command mode = "c"
 
--- Normal
 -- Better window navigation
 Map("n", "<C-k>", "<C-w>k", "Go to Window Above")
 Map("n", "<C-j>", "<C-w>j", "Go to Window Below")
@@ -59,6 +58,12 @@ Map(
 	"<leader>o",
 	":call append(line('.'), repeat([''], v:count1))<CR>",
 	"Add Line Below"
+)
+
+Map(
+	"n", "<leader>rw",
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	"Search and Replace Word"
 )
 
 Map("v", "<", "<gv", "Remove Indent")

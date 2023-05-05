@@ -2,6 +2,7 @@ vim.g.python_host_prog = "/usr/bin/python"
 vim.g.python3_host_prog = "/usr/bin/python"
 -- netrw options
 vim.g.netrw_bufsettings = "noma nomod nu rnu nobl nowrap ro"
+vim.g.netrw_liststyle = 3
 
 vim.o.background = "light"
 vim.o.clipboard = "unnamedplus"

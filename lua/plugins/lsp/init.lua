@@ -1,7 +1,6 @@
 local function lsp_keymaps(bufnr)
 	local opts = { buffer = bufnr, remap = false, silent = true }
 	local pref = "<leader>l"
-	Map("n", pref, "", "LSP", opts)
 	Map("n", pref .. "a",
 		vim.lsp.buf.code_action, "Code Action", opts
 	)
