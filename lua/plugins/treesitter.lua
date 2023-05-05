@@ -52,4 +52,13 @@ return {
 	},
 	{ "nvim-treesitter/playground", },
 	{ "JoosepAlviste/nvim-ts-context-commentstring", },
+	{
+		"RRethy/vim-illuminate",
+		config = function()
+			require("illuminate").configure({
+				providers = { "treesitter", "regex" },
+				delay = 0,
+			})
+		end
+	}
 }

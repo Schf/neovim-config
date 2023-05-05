@@ -55,8 +55,6 @@ local function mason_lspconfig_config()
 	-- On attach
 	local function att(client, bufnr)
 		lsp_keymaps(bufnr)
-
-		require("illuminate").on_attach(client)
 	end
 
 	local lspconfig = require("lspconfig")
@@ -134,10 +132,4 @@ return {
 	},
 	{ "mfussenegger/nvim-dap" },
 	{ "jose-elias-alvarez/null-ls.nvim" },
-	{
-		"RRethy/vim-illuminate",
-		config = function()
-			require("illuminate").configure()
-		end
-	}
 }
