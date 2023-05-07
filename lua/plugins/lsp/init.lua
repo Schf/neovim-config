@@ -1,32 +1,27 @@
 local function lsp_keymaps(bufnr)
 	local opts = { buffer = bufnr, remap = false, silent = true }
-
-	Map("n", "gd", vim.lsp.buf.definition, "Go to Declaration", opts)
-	-- Map("n", "gD", vim.lsp.buf.declaration, "Go to Definition", opts)
-	-- Map("n", "gI", vim.lsp.buf.implementation, "Go to Implementation", opts)
-	-- Map("n", "gl", vim.diagnostics.open_float, "Open Float", opts)
-	Map("n", "gr", vim.lsp.buf.references, "Go to References", opts)
-
 	local pref = "<leader>l"
+
 	Map("n", pref .. "a", vim.lsp.buf.code_action, "Code Action", opts)
-	Map("n", pref .. "d",
+	Map("n", pref .. "d", vim.lsp.buf.definition, "Go to Definition", opts)
+	-- Map("n", pref .. "D", vim.lsp.buf.declaration, "Go to Declaration", opts)
+	Map("n", pref .. "D",
 		"<cmd>Telescope diagnostics bufnr=0<cr>",
 		"Document Diagnostics", opts
-	)
-	Map("n", pref .. "w",
-		"<cmd>Telescope diagnostics<cr>",
-		"Workspace Diagnostics", opts
 	)
 	Map("n", pref .. "f",
 		"<cmd>lua vim.lsp.buf.format{async=true}<cr>",
 		"Format", opts
 	)
+	-- Map("n", pref .. "F", vim.diagnostics.open_float, "Open Float", opts)
 	Map("n", pref .. "i", vim.cmd.LspInfo, "Info", opts)
+	-- Map("n", pref .. "I", vim.lsp.buf.implementation, "Go to Implementation", opts)
 	Map("n", pref .. "j", vim.diagnostic.goto_next, "Next Diagnostic", opts)
 	Map("n", pref .. "k", vim.diagnostic.goto_prev, "Prev Diagnostic", opts)
-	Map("n", pref .. "l", vim.lsp.codelens.run, "CodeLens Action", opts)
+	Map("n", pref .. "L", vim.lsp.codelens.run, "CodeLens Action", opts)
 	Map("n", pref .. "q", vim.diagnostic.setloclist, "Quickfix", opts)
 	Map("n", pref .. "r", vim.lsp.buf.rename, "Rename", opts)
+	Map("n", pref .. "R", vim.lsp.buf.references, "References", opts)
 	Map("n", pref .. "s",
 		"<cmd>Telescope lsp_document_symbols<cr>",
 		"Document Symbols", opts
@@ -34,6 +29,10 @@ local function lsp_keymaps(bufnr)
 	Map("n", pref .. "S",
 		"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 		"Workspace Symbols", opts
+	)
+	Map("n", pref .. "W",
+		"<cmd>Telescope diagnostics<cr>",
+		"Workspace Diagnostics", opts
 	)
 end
 
