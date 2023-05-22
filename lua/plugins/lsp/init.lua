@@ -13,7 +13,7 @@ local function lsp_keymaps(bufnr)
 		"<cmd>lua vim.lsp.buf.format{async=true}<cr>",
 		"Format", opts
 	)
-	-- Map("n", pref .. "F", vim.diagnostics.open_float, "Open Float", opts)
+	Map("n", pref .. "F", vim.diagnostic.open_float, "Open Float", opts)
 	Map("n", pref .. "i", vim.cmd.LspInfo, "Info", opts)
 	-- Map("n", pref .. "I", vim.lsp.buf.implementation, "Go to Implementation", opts)
 	Map("n", pref .. "j", vim.diagnostic.goto_next, "Next Diagnostic", opts)
@@ -39,7 +39,7 @@ end
 local function mason_lspconfig_config()
 	require("mason").setup({})
 
-	local servers = { "lua_ls", "clangd", "pyright", "texlab", }
+	local servers = { "lua_ls", "clangd", "pyright",  "texlab", }
 	local mason_lspconfig = require("mason-lspconfig")
 	mason_lspconfig.setup({
 		ensure_installed = servers,
@@ -57,9 +57,27 @@ local function mason_lspconfig_config()
 	end
 
 	local lspconfig = require("lspconfig")
-	local got_servers = mason_lspconfig.get_installed_servers()
-	got_servers = got_servers or {}
-	servers = vim.tbl_deep_extend("force", got_servers, servers)
+	local gui_servers = mason_lspconfig.get_installed_servers()
+
+	gui_servers = gui_servers or {}
+	-- servers = vim.tbl_deep_extend("force", got_servers, servers)
+	-- mason_lspconfig.get_installed_servers() returns a table in a random order.
+	-- vim.tbl_deep_extend() doesn't check the table's values, only their labels.
+	-- For these reasons, extending the servers table with the gui table using
+	-- the function above returns a table with multiple of the base servers, and
+	-- with gui servers missing. The loops below solve this issue, albeit poorly.
+	for _, gui_server in pairs(gui_servers) do
+		local gui_only = true
+		for _, base_server in pairs(servers) do
+			if gui_server == base_server then
+				gui_only = false
+				break
+			end
+		end
+		if gui_only then
+			table.insert(servers, gui_server)
+		end
+	end
 
 	for _, server in pairs(servers) do
 		local opts = {
