@@ -20,17 +20,26 @@ vim.o.timeout = true
 vim.o.timeoutlen = 1000
 vim.o.undofile = true
 vim.o.updatetime = 300
+-- line numbering
+vim.o.number = true
+vim.o.relativenumber = true
+-- line wrap
+vim.o.breakindent = true
+vim.o.breakindentopt = "shift:8"
+vim.o.diffopt = "internal,filler,closeoff,followwrap"
+vim.o.linebreak = true
 vim.o.wrap = true
+-- scroll
+vim.o.scrolloff = 8
+vim.o.sidescrolloff = 8
+-- show whitespaces
+vim.o.list = true
+vim.o.listchars = "tab:\\x20\\u2500\\x20,trail:~,extends:>,precedes:<,multispace:\\u25AB\\x20"
 -- tab
 vim.o.expandtab = false
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
--- line numbering
-vim.o.number = true
-vim.o.relativenumber = true
--- scroll
-vim.o.scrolloff = 8
-vim.o.sidescrolloff = 8
+
 
 vim.opt.iskeyword:append "-"
 vim.opt.shortmess:append "c"
