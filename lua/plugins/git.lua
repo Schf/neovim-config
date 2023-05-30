@@ -2,7 +2,7 @@ return {
 	{
 		"tpope/vim-fugitive",
 		config = function()
-			Map("n", "<leader>gs", vim.cmd.Git, "Git Fugitive")
+			Map("n", "<leader>gf", vim.cmd.Git, "Git Fugitive")
 			local group = vim.api.nvim_create_augroup(
 				"CustomFugitive", { clear = true }
 			)
@@ -32,7 +32,8 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
-			require("gitsigns").setup({
+			local gitsigns = require("gitsigns")
+			gitsigns.setup({
 				signs = {
 					add = { hl = "GitSignsAdd", text = "▎", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
 					change = {
@@ -93,6 +94,20 @@ return {
 					enable = false,
 				},
 			})
+
+			local pref = "<leader>g"
+			Map("n", pref .. "b", "<cmd>Telescope git_branches<cr>", "Checkout branch")
+			Map("n", pref .. "c", "<cmd>Telescope git_commits<cr>", "Checkout commit")
+			Map("n", pref .. "d", "<cmd>Gitsigns diffthis HEAD<cr>", "Diff")
+			Map("n", pref .. "j", gitsigns.next_hunk, "Next Hunk")
+			Map("n", pref .. "k", gitsigns.prev_hunk, "Prev Hunk")
+			Map("n", pref .. "l", gitsigns.blame_line, "Blame")
+			Map("n", pref .. "o", "<cmd>Telescope git_status<cr>", "Open changed file")
+			Map("n", pref .. "p", gitsigns.preview_hunk, "Preview Hunk")
+			Map("n", pref .. "r", gitsigns.reset_hunk, "Reset Hunk")
+			Map("n", pref .. "R", gitsigns.reset_buffer, "Reset Buffer")
+			Map("n", pref .. "s", gitsigns.stage_hunk, "Stage Hunk")
+			Map("n", pref .. "u", gitsigns.undo_stage_hunk, "Undo Stage Hunk")
 		end,
 	},
 }
